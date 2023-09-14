@@ -1,4 +1,3 @@
-#  STACK AND QUEUE
 # LEETCODE 20 Valid Parentheses
 # def valid_parenthese(string : str):
 #     stack = []
@@ -14,11 +13,16 @@
 #             return False
 #     return len(stack) == 0 
 # print(valid_parenthese("(){}[]"))
-#LEETCODE 316 Remove Duplicate Letter 
-def remove_duplicate_letter(string):
-    stack = []
-    sett = sorted(list(set(string)))
-    print(sett)
-    return 0
-print(remove_duplicate_letter("bcabc"))
-
+# DFS 
+def num_is_island(islands):
+    def dfs(i,j):
+        if i<0 or i>=len(islands) or j<0 or j>=len(islands) or islands[i][j] != 1 : return 
+    
+    count = 0
+    for i in range(islands):
+        for j in range(len(islands[0])):
+            if islands[i][j] == 1:
+                dfs(i,j)
+                count +=1 
+    return count 
+print(num_is_island([[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[1,1,0,0,0],[0,0,0,0,0]]))
